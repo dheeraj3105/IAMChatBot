@@ -70,12 +70,18 @@ def create_user():
         if "Application not available" in response_text:
             flag = True
     elif display_name == "Create Request":
-        parameters = req["queryResult"]["outputContexts"][1]["parameters"]
-        first_name = parameters.get('firstName', '')
-        last_name = parameters.get('lastName', '')
-        email = parameters.get('email', '')
+        # parameters = req["queryResult"]["outputContexts"][1]["parameters"]
+        # first_name = parameters.get('firstName', '')
+        # last_name = parameters.get('lastName', '')
+        # email = parameters.get('email', '')
+        username = None
+        for context in req["queryResult"]["outputContexts"]:
+            if "username" in context["parameters"]:
+                username = context["parameters"]["username"]
+                application_name = context["parameters"]["application"]
+                break
         # username = parameters.get('username', '')
-        application_name = parameters.get('application', '')
+        # application_name = parameters.get('application', '')
         response_text = saviynt_integration.request_to_add_entitlement(username, application_name,
                                                                        parameters.get('entitlementvalue', ''))
     elif display_name == "Request_Access_Intent":
