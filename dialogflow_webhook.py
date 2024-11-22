@@ -93,21 +93,21 @@ def create_user():
             flag = True
     elif display_name == "Welcome_Intent":
         response_text = saviynt_integration.greeting()
-        flag = "welcome"
+        # flag = "welcome"
     print(response_text)
     if flag == False:
         return {"fulfillmentMessages": [{"text": {"text": [response_text]}}]}
-    elif flag == "welcome":
-        return {
-            "fulfillmentMessages": [
-                {
-                    "quickReplies": {
-                        "title": response_text + " Please choose an option from below for assistance:",
-                        "quickReplies": ["Request Access", "Option 2"]
-                    }
-                }
-            ]
-        }
+    # elif flag == "welcome":
+    #     return {
+    #         "fulfillmentMessages": [
+    #             {
+    #                 "quickReplies": {
+    #                     "title": response_text + " Please choose an option from below for assistance:",
+    #                     "quickReplies": ["Request Access", "Option 2"]
+    #                 }
+    #             }
+    #         ]
+    #     }
     else:
         print({"fulfillmentMessages": [{"text": {"text": [response_text]}}], "outputContexts": [{"name": "projects/iam-chatbot-438200/agent/sessions/c020046d-dc64-0379-3ff1-02a0c381c89b/contexts/FallbackIntent",
                                                                                                  "lifespanCount": 5}] })

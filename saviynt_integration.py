@@ -20,7 +20,7 @@ def greeting():
     else:
         greeting = "Good Evening"
 
-    return "Hi " + greeting + ", Welcome to NTT Data \n"
+    return "Hi " + greeting + ", Welcome to NTT Data, How can I assist you today?\n"
 
 def get_user(username, payload=None):
     access_token = get_auth_code()
