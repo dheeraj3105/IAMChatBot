@@ -93,7 +93,7 @@ def create_user():
             flag = True
     elif display_name == "Welcome_Intent":
         response_text = saviynt_integration.greeting()
-        # flag = "welcome"
+        flag = False
     print(response_text)
     if flag == False:
         return {"fulfillmentMessages": [{"text": {"text": [response_text]}}]}
