@@ -20,7 +20,7 @@ def greeting():
     else:
         greeting = "Good Evening"
 
-    return "Hi " + greeting + ", Welcome to NTT Data, How can I assist you today?\n"
+    return "Hi " + greeting + ", How can I assist you today?\n"
 
 def get_user(username, payload=None):
     access_token = get_auth_code()
@@ -77,7 +77,7 @@ def request_to_add_entitlement(username, endpoint, entitlement_value, entitlemen
     if response_json.get("errorCode") == '0':
         response_text = "Your access request has been successfully processed! Your request ID is " + response_json.get("RequestId") + ". To submit another request, simply type 'Request access' or 'Access request.' 😊"
     else:
-        response_text = response_json.get("message")
+        response_text = "Oops! It seems you don't have the necessary permissions to request access to this role. If you'd like to try again, just type 'Request Access.' For further assistance, please reach out to your IAM administrator"
     return response_text
 
 

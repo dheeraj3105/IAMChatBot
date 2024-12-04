@@ -84,6 +84,8 @@ def create_user():
         # application_name = parameters.get('application', '')
         response_text = saviynt_integration.request_to_add_entitlement(username, application_name,
                                                                        parameters.get('entitlementvalue', ''))
+        if "Oops" in response_text:
+            flag = True
     elif display_name == "Request_Access_Intent":
         user_authentication = saviynt_integration.get_user(username)
         if "Successfully" in user_authentication:
