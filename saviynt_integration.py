@@ -75,7 +75,7 @@ def request_to_add_entitlement(username, endpoint, entitlement_value, entitlemen
     print(payload)
     print(response_json)
     if response_json.get("errorCode") == '0':
-        response_text = "Request to add entitlement is success, your request ID is: " + response_json.get("RequestId") + " \n Please request access again if you would like to make another request."
+        response_text = "Your access request has been successfully processed! Your request ID is " + response_json.get("RequestId") + ". To submit another request, simply type 'Request access' or 'Access request.' 😊"
     else:
         response_text = response_json.get("message")
     return response_text
