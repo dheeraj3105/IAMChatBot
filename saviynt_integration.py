@@ -75,7 +75,7 @@ def request_to_add_entitlement(username, endpoint, entitlement_value, entitlemen
     print(payload)
     print(response_json)
     if response_json.get("errorCode") == '0':
-        response_text = "Your access request has been successfully processed! Your request ID is " + response_json.get("RequestId") + ". To submit another request, simply type 'Request access' or 'Access request.' 😊"
+        response_text = "Your access request has been successfully processed! Your request ID is " + response_json.get("RequestId") + ". To submit another request, simply type 'Request access' or 'Access request.'"
     else:
         response_text = "Oops! It seems you don't have the necessary permissions to request access to this role. If you'd like to try again, just type 'Request Access.' For further assistance, please reach out to your IAM administrator"
     return response_text
